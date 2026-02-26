@@ -11,11 +11,21 @@
   <main class="container">
     <section class="doc-shell">
       <header class="doc-header">
-        <p class="eyebrow">Color Memory</p>
-        <h1>Support</h1>
-        <div class="badge-row">
-          <span class="badge">Apple Watch App</span>
-          <span class="badge">EN / 日本語</span>
+        <div class="doc-hero">
+          <div class="ring-wrap" aria-hidden="true">
+            <div class="ring"></div>
+            <div class="ring-ping"></div>
+            <div class="ring-ping delay"></div>
+          </div>
+          <div>
+            <p class="eyebrow">Color Memory</p>
+            <h1>Support</h1>
+            <div class="badge-row">
+              <span class="badge">Apple Watch App</span>
+              <span class="badge">EN / 日本語</span>
+              <span class="badge">Mostly emoji UX</span>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -38,6 +48,13 @@
           <p class="muted">
             Please include your watchOS version and a short description of the issue when contacting support.
           </p>
+          <div class="support-play-panel" aria-label="Color Memory status indicator demo">
+            <div class="support-play-row">
+              <span class="emoji-cycle" data-emoji-cycle>🧠</span>
+              <button type="button" class="ghost-btn" data-emoji-next>Next status</button>
+            </div>
+            <p class="muted" style="margin: 0.55rem 0 0;">Tiny UI demo: idle → watch → repeat → clear → game over → ranking.</p>
+          </div>
         </article>
 
         <article class="lang-card" lang="ja">
@@ -58,6 +75,12 @@
           <p class="muted">
             お問い合わせ時は、watchOS バージョンと問題の内容を簡単に添えてください。
           </p>
+          <div class="support-play-panel" aria-hidden="true">
+            <div class="support-play-row">
+              <span class="emoji-cycle">👀 → 🔄 → 👍️✨️ → 👎️👎️👎️ → 🏆</span>
+            </div>
+            <p class="muted" style="margin: 0.55rem 0 0;">ちょっとした遊び要素です。本文はまじめにしてあります。</p>
+          </div>
         </article>
       </div>
 
@@ -65,7 +88,21 @@
         <a href="/my-public-documents/">Home</a>
         <a href="/my-public-documents/color-memory/privacy-policy/">Privacy Policy</a>
       </nav>
+      <p class="tiny-easter-egg">🔒 No data collection. <code>Only local scores</code>. The ring still spins anyway.</p>
     </section>
   </main>
+  <script>
+    (() => {
+      const label = document.querySelector("[data-emoji-cycle]");
+      const button = document.querySelector("[data-emoji-next]");
+      if (!label || !button) return;
+      const states = ["🧠", "👀", "🔄", "👍️✨️", "👎️👎️👎️", "🏆"];
+      let index = 0;
+      button.addEventListener("click", () => {
+        index = (index + 1) % states.length;
+        label.textContent = states[index];
+      });
+    })();
+  </script>
 </body>
 </html>
