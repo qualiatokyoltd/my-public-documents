@@ -1,0 +1,12 @@
+:root {color-scheme:dark; background:#101d17; color:#f2ecdc; font:16px/1.75 system-ui,sans-serif;}
+body {margin:0;}
+header {display:flex; flex-wrap:wrap; justify-content:space-between; gap:.4rem 1.5rem; border-bottom:1px solid #4e6556;}
+header,main {padding:1rem max(1.15rem,calc((100% - 47rem)/2));}
+header a:first-child {font-weight:800;}
+a {color:#f3d18e; text-underline-offset:.19em;}
+a:focus-visible {outline:2px solid #f3d18e; outline-offset:3px;}
+h1,h2 {line-height:1.35;}
+h1 {font-size:clamp(1.6rem,5vw,2.2rem);}
+h2 {margin-top:2rem; font-size:1.22rem;}
+p {margin:0 0 .8rem;}
+main {padding-bottom:3rem;}

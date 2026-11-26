@@ -7,3 +7,5 @@ Public pages for app support and privacy policy documents.
 - `color-memory/privacy-policy/`
 - `color-memory/support/`
 
+- `dopagaki-mahjong/privacy-policy/`
+- `dopagaki-mahjong/support/`
